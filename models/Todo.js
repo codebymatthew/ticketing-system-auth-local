@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const TicketSchema = new mongoose.Schema({
+  ticket: {
     type: String,
     required: true,
   },
@@ -12,7 +12,11 @@ const TodoSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true
+  },
+  urgency: {
+    type: String,
+    required: true
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Ticket', TicketSchema)

@@ -13,7 +13,8 @@ module.exports = {
     },
     createTicket: async (req, res)=>{
         try{
-            await Ticket.create({ticket: req.body.ticketItem, completed: false, userId: req.user.id, urgency: req.body.urgency}) 
+            // await Ticket.create({ticket: req.body.ticketItem, completed: false, userId: req.user.id, urgency: req.body.urgency}) 
+            console.log(req.body)
             console.log('ticket has been added!')
             res.redirect('/tickets')
         }catch(err){

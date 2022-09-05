@@ -1,27 +1,27 @@
 const deleteBtn = document.querySelectorAll('.del')
-const ticketItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const ticketIdFromJSFileItem = document.querySelectorAll('span.not')
+const ticketComplete = document.querySelectorAll('span.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTicket)
 })
 
-Array.from(ticketItem).forEach((el)=>{
+Array.from(ticketIdFromJSFileItem).forEach((el)=>{
     el.addEventListener('click', markComplete)
 })
 
-Array.from(todoComplete).forEach((el)=>{
+Array.from(ticketComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
 
 async function deleteTicket(){
-    const todoId = this.parentNode.dataset.id
+    const ticketId = this.parentNode.dataset.id
     try{
-        const response = await fetch('tickets/deleteTicket', {
+        const response = await fetch('ticketIdFromJSFiles/deleteTicket', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'ticketIdFromJSFile': todoId
+                'ticketIdFromJSFileIdFromJSFile': ticketId
             })
         })
         const data = await response.json()
@@ -33,13 +33,13 @@ async function deleteTicket(){
 }
 
 async function markComplete(){
-    const ticketId = this.parentNode.dataset.id
+    const ticketIdFromJSFileId = this.parentNode.dataset.id
     try{
-        const response = await fetch('tickets/markComplete', {
+        const response = await fetch('ticketIdFromJSFiles/markComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'ticketIdFromJSFile': ticketId
+                'ticketIdFromJSFileIdFromJSFile': ticketIdFromJSFileId
             })
         })
         const data = await response.json()
@@ -51,13 +51,13 @@ async function markComplete(){
 }
 
 async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
+    const ticketIdFromJSFileId = this.parentNode.dataset.id
     try{
-        const response = await fetch('tickets/markIncomplete', {
+        const response = await fetch('ticketIdFromJSFiles/markIncomplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'ticketIdFromJSFile': todoId
+                'ticketIdFromJSFileIdFromJSFile': ticketIdFromJSFileId
             })
         })
         const data = await response.json()

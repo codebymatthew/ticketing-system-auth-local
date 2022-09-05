@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
+    <section class="mainWrapper">
+    <h1>Open Tickets</h1>
+    <ul class="todoList">
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
+<<<<<<< HEAD
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %> <%= el.urgency %> </span> 
+=======
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'> Ticket: <%= el.todo %> </span> <span class='urgent'>Urgency: <%= el.urgency %> </span>
+>>>>>>> b6c6fae4dba1637fac5e056c5bdd66bd3d72a88c
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
@@ -32,7 +37,8 @@
     </form>
 
     <a href="/logout">Logout</a>
-
+      
     <script src="js/main.js"></script>
+    </section>
 </body>
 </html>
